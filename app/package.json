@@ -1,0 +1,34 @@
+{
+  "name": "starter-node-angular",
+  "main": "server.js",
+  "dependencies": {
+    "acl": "latest",
+    "bcrypt-nodejs": "latest",
+    "body-parser": "latest",
+    "connect-flash": "latest",
+    "connect-mongo": "latest",
+    "express": "latest",
+    "express-session": "latest",
+    "helmet": "latest",
+    "kerberos": "0.0.17",
+    "method-override": "latest",
+    "mongodb": "^2.1.0",
+    "mongoose": "latest",
+    "mongoose-lifecycle": "latest",
+    "mongoose-paginate": "latest",
+    "morgan": "latest",
+    "passport": "latest",
+    "passport-local": "latest",
+    "validate.js": "latest"
+  },
+  "devDependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.15",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-requirejs": "^0.2.2",
+    "phantomjs": "^1.9.19",
+    "requirejs": "^2.1.22"
+  }
+}

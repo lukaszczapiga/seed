@@ -1,0 +1,80 @@
+<!-- public/index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<base href="/">
+
+	<title>Starter Node and Angular</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="js/libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+    <link rel="stylesheet" href="js/libs/font-awesome/css/font-awesome.min.css">
+
+</head>
+<body ng-controller="indexCtrl" ng-cloak>
+<div class="container">
+    <nav class="navbar navbar-default navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" ui-sref="home">Blog</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li ng-class="{ active: isActive('/home')}"><a ui-sref="home">Home</a></li>
+                    <li ng-class="{ active: isActive('/profile')}"><a ui-sref="profile">Profile</a></li>
+                    <li ng-class="{ active: isActive('/admin')}" ng-if="isAuthorised(userRoles.admin)"><a ui-sref="admin">Admin</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav>
+</div>
+<div class="container">
+    <!-- ANGULAR DYNAMIC CONTENT -->
+    <div ui-view></div>
+    <!--<div ng-view></div>-->
+</div>
+<hr>
+<div class="container">
+    <footer>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12" ng-controller="loginCtrl">
+                <!--<div ng-switch on="currentUser.role">
+                    <div ng-switch-when="guest">You're guest.</div>
+                    <div ng-switch-when="editor">You're editor.</div>
+                    <div ng-switch-default>You're something else.</div>
+                </div>-->
+                <div class="navbar-form">
+                    <div ng-if="!currentUser">
+                        <button class="btn btn-success btn-sm" ng-click="loginModal()">
+                            Login
+                        </button>
+                        <a class="btn btn-info btn-sm" ng-if="!isActive('/register')" ui-sref="register">Register</a>
+                    </div>
+                    <div ng-if="currentUser">
+                        Welcome, {{ currentUser.name }}
+                        <button class="btn btn-danger btn-sm" ng-click="logout()">
+                            Log out
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <p>
+                    &copy; Company 2015
+                </p>
+            </div>
+        </div>
+    </footer>
+</div>
+</div>
+<script data-main="js/main" src="js/libs/requirejs/require.js"></script>
+</body>
+</html>
