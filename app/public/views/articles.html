@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-12">
+                <a class="btn btn-info btn-sm" ui-sref="admin.articles.new-article" ng-if="!isActive('/admin/articles/new-article')">New Article</a>
+                <a class="btn btn-danger btn-sm pull-right" ng-if="isActive('/admin/articles/new-article')" ui-sref="admin.articles">Back</a>
+            </div>
+        </div>
+        <div class="row" ng-if="!isActive('/admin/articles/new-article')">
+            <div class="col-sm-12">
+                <input type="search" ng-model="q" placeholder="Filter articles..." aria-label="Filter articles" />
+                <ul class="example-animate-container">
+                    <li class="animate-repeat" ng-repeat="article in articles | filter:q as results">
+                        [{{$index + 1}}] Article title: {{article.title}}. <i class="fa fa-trash-o" ng-click="delete(article._id)"></i>
+                    </li>
+                    <li class="animate-repeat" ng-if="results.length == 0">
+                        <strong>No results found...</strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div ui-view></div>
+</div>

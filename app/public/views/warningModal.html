@@ -1,0 +1,20 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-title">Session expiry</h3>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-12" >
+                <div idle-countdown="countdown">
+                    Timeout in {{countdown}} seconds.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer" ng-controller="loginCtrl">
+        <button class="btn btn-success btn-sm" type="button" ng-click="resumeSession()">Keep me logged in</button>
+        <button class="btn btn-danger btn-sm" ng-click="logout()">
+            Log out
+        </button>
+    </div>
+</div>

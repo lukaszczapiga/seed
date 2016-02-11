@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="jumbotron text-center">
+        <h1>Home Page</h1>
+        <p>{{ tagline }}</p>
+    </div>
+    <div class="col-sm-12">
+        <div class="row">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="search">Search:</label>
+                    <input type="search" id="search" ng-model="q" placeholder="Filter articles..." aria-label="Filter articles" />
+                </div>
+                <div class="form-group">
+                    <label for="item">Items per page:</label>
+                    <input type="number" id="item" min="1" max="100" class="form-control" ng-model="pageSize">
+                </div>
+            </form>
+            <div class="col-sm-6">
+
+            </div>
+            <div class="col-sm-6">
+
+            </div>
+        </div>
+        <div class="animate-repeat" ng-repeat="article in articles | orderBy:'-created'| filter:q as results">
+            <a ui-sref="article({ articleId: article._id})">
+                <h1>{{article.title}}</h1>
+            </a>
+            <p>{{article.created}}</p>
+            <p>{{article.body}}</p>
+        </div>
+        <div class="animate-repeat" ng-if="results.length == 0">
+            <strong>No articles found...</strong>
+        </div>
+    </div>
+    <div class="col-sm-12 text-center">
+        <uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" boundary-links="true"
+                        num-pages="noPages" items-per-page="pageSize"></uib-pagination>
+        <!--<nav>
+            <ul class="pagination">
+                <li ng-if="page == 1">
+                    <a ng-click="page('prev')" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li ng-repeat="page in pages" ng-class="{ active: (currentPage==page) ? true : false }">
+                    <a ng-click="page(page)">{{page}}</a>
+                </li>
+                <li ng-if="page !== noPages">
+                    <a ng-click="page('next')" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>-->
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h2 class="text-center">New article</h2>
+        <form name="newArticleForm" role="form" ng-submit="create()">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label>Title</label>
+                    </div>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control input-sm" ng-model="title" name="title">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label>Content</label>
+                    </div>
+                    <div class="col-lg-8">
+                        <textarea cols="120" rows="20" class="form-control input-sm" ng-model="content" name="content"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label>Tags</label>
+                    </div>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control input-sm" required ng-model="tags" name="tags">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

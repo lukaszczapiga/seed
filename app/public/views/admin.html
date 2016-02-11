@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1 class="panel-title text-center">Admin Panel</h1>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-2 sidebar">
+                        <ul class="nav nav-sidebar">
+                            <li ng-class="{ active: isActive('/admin')}"><a ui-sref="admin">Statistics</a></li>
+                            <li ng-class="{ active: isActive('/admin/articles')}"><a ui-sref="admin.articles">Articles</a></li>
+                            <li ng-class="{ active: isActive('/admin/users')}"><a ui-sref="admin.users">Users</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-10">
+                        <div ui-view></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="navbar-form">
+            <a class="btn btn-info btn-sm" ui-sref="admin.new-article">New Article</a>
+            <a class="btn btn-info btn-sm" ui-sref="admin.users">Users</a>
+        </div>-->
+    </div>
+</div>

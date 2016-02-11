@@ -1,0 +1,19 @@
+{
+  "name": "starter-node-angular",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular": "latest",
+    "requirejs": "latest",
+    "angular-cookies": "latest",
+    "angular-messages": "latest",
+    "bootstrap": "latest",
+    "angular-bootstrap": "latest",
+    "font-awesome": "latest",
+    "ng-idle": "latest",
+    "angular-ui-router": "latest",
+    "requirejs-domready": "latest"
+  },
+  "resolutions": {
+    "angular": "1.4.8"
+  }
+}
